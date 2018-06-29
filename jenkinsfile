@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'ittaihurvitz/simple-container-ittai:1.0' } }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'sudo docker run -p 80:80 ittaihurvitz/simple-container-ittai:1.0'
+                sh 'echo step test'
             }
         }
         stage('deploy') {
