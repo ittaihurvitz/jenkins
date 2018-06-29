@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent { docker { image 'ittaihurvitz/simple-container-ittai:1.0' } }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'sudo docker run -p 80:80 ittaihurvitz/simple-container-ittai:1.0'
             }
         }
     }
